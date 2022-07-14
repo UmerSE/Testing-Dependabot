@@ -16,7 +16,7 @@ from django.db import transaction
 
 from .models import Task
 from .forms import PositionForm
-
+#login logout password reset password change 
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -39,7 +39,7 @@ class RegisterPage(FormView):
             login(self.request, user)
         return super(RegisterPage, self).form_valid(form)
 
-    #def get(self, *args, **kwargs):
+    def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
             return redirect('tasks')
         return super(RegisterPage, self).get(*args, **kwargs)
