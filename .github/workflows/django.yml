@@ -36,7 +36,7 @@ jobs:
       uses: codecov/codecov-action@v2
       with:
          fail_ci_if_error: True
-         repo_token: ${{ secrets.CODECOV_TOKEN }}
+         repo_token: ${{ secrets.GITHUB_TOKEN }}
     - name: Coverage report
       uses: 5monkeys/cobertura-action@v12
       with:
