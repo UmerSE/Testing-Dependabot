@@ -37,6 +37,6 @@ jobs:
       with:
          repo_token: ${{ secrets.GITHUB_TOKEN }}
          fail_below_threshold: True
-         minimum_coverage: 70
+         minimum_coverage: 75
          show_missing: True
          path: coverage.xml
