@@ -3,13 +3,6 @@ name: Django CI
 on: [push,pull_request]
 
 jobs:
-    skip-ci:
-        if: "github.actor == 'dependabot-bot'"
-        runs-on: ubuntu-latest
-        steps:
-            - name: Noop
-              run: |
-                  echo "Skipping CI run for automated PRs."
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -28,6 +21,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install coverage
         pip install -r requirements.txt
+      skip :
+        if: ${{ github.actor == 'dependabot[bot]' }}
     - name: Run Tests
       run: |
         python manage.py test
