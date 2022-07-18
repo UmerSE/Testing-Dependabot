@@ -7,11 +7,9 @@ on:
     branches: [ "main" ]
 
 jobs:
-  skip-ci:
-   if: ${{ github.actor == 'dependabot[bot]' }}
-   
   build:
-
+    skip-ci:
+       if: ${{ github.actor == 'dependabot[bot]' }}
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
