@@ -5,6 +5,11 @@ on:
     branches-ignore:
       - 'dependabot/**'
       - 'skip_ci*'
+  pull_request:
+     branches-ignore:
+      - 'dependabot/**'
+      - 'skip_ci*'
+
 jobs:
   build:
     runs-on: ubuntu-latest
