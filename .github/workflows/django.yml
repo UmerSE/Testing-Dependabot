@@ -3,7 +3,7 @@ name: CI
 on: [push,pull_request]
 
 jobs:
-  skip-CI:
+  skip-ci:
       if: github.actor == 'dependabot[bot]'
   build:
     runs-on: ubuntu-latest
