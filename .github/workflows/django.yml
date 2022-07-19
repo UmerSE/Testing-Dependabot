@@ -1,9 +1,9 @@
 name: CI
 
 on: [push, pull_request]
-  branches-ignore:
-    - 'dependabot/**'
-    - 'skip_ci*'
+   branches-ignore:
+     - 'dependabot/**'
+     - 'skip_ci*'
 
 jobs:
   build:
