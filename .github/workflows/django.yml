@@ -4,20 +4,14 @@ on: [push,pull_request]
 
 jobs:
   build:
-    skip-ci:
-    if: "github.actor == 'trailheadapps-bot'"
-    runs-on: ubuntu-latest
-    steps:
-    - name: Noop
-    run: |
-       echo "Skipping CI run for automated PRs."
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.9]
     steps:
+    skip-ci:
+    if: "github.actor == 'dependabot[bot]'"
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
