@@ -1,27 +1,17 @@
-name: Django CI
+name: CI
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request_target:
-    branches: [ "main" ]
-
+    branches-ignore:
+      - 'dependabot/**'
+      - 'skip_ci*'
 jobs:
-  skip-ci:
-   if: ${{ github.actor == 'dependabot[bot]' }}
-        runs-on: ubuntu-latest
-        steps:
-            - name: Noop
-              run: |
-                  echo "Skipping CI run for automated PRs."
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
       matrix:
         python-version: [3.9]
-
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
