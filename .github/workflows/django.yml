@@ -27,8 +27,10 @@ jobs:
         coverage run manage.py test
         coverage report
         coverage xml
-      if: github.actor == 'dependabot[bot]'
-      skip_CI:
+      with:
+         if: github.actor == 'dependabot[bot]'
+         skip_CI : True
+            
     - name: Coverage report
       uses: 5monkeys/cobertura-action@v12
       with:
