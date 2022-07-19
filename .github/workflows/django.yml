@@ -3,15 +3,13 @@ name: CI
 on: [push,pull_request]
 
 jobs:
-    # Dummy job used to skip CI run on automated PRs
     skip-ci:
         if: "github.actor == 'dependabot-bot'"
         runs-on: ubuntu-latest
         steps:
             - name: skip
               run: |
-                  echo "Skipping CI run for automated PRs."
-                  
+                  echo "Skipping CI run for automated PRs."   
   build:
     runs-on: ubuntu-latest
     strategy:
