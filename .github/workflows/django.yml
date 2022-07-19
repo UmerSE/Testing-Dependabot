@@ -1,11 +1,11 @@
 name: CI
 
 on: [push,pull_request]
-
+    branches-ignore:    
+     - 'dependabot/**'
+     - 'skip_ci*'
 jobs:
   build:
-    skip ci:
-    if: "github.actor == 'dependabot[bot]'"
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
