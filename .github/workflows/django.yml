@@ -4,7 +4,7 @@ on: [push,pull_request]
 
 jobs:
   build:
-    skip-ci:
+    skip ci:
     if: "github.actor == 'dependabot[bot]'"
     runs-on: ubuntu-latest
     strategy:
