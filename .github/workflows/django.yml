@@ -1,4 +1,4 @@
-name: Django CI
+name: CI
 
 on: [push,pull_request]
 
@@ -21,14 +21,14 @@ jobs:
         python -m pip install --upgrade pip
         pip install coverage
         pip install -r requirements.txt
-      skip :
-        if: ${{ github.actor == 'dependabot[bot]' }}
     - name: Run Tests
       run: |
         python manage.py test
         coverage run manage.py test
         coverage report
         coverage xml
+      if: github.actor == 'dependabot[bot]'
+      skip_CI:
     - name: Coverage report
       uses: 5monkeys/cobertura-action@v12
       with:
