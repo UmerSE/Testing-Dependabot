@@ -3,6 +3,16 @@ name: CI
 on: [push,pull_request]
 
 jobs:
+    # Dummy job used to skip CI run on automated PRs
+    skip-ci:
+        if: "github.actor == 'trailheadapps-bot'"
+        runs-on: ubuntu-latest
+        steps:
+            - name: Noop
+              run: |
+                  echo "Skipping CI run for automated PRs."
+
+jobs:
   build:
     runs-on: ubuntu-latest
     strategy:
@@ -10,8 +20,6 @@ jobs:
       matrix:
         python-version: [3.9]
     steps:
-    skip-ci:
-    if: "github.actor == 'dependabot[bot]'"
     - uses: actions/checkout@v3
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
