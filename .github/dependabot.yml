@@ -10,4 +10,3 @@ updates:
     schedule:
       interval: "daily"
       time: "9:00"
-      timezone: "UTC"
