@@ -7,7 +7,7 @@ on:
   pull_request:
      branches-ignore:
       - 'dependabot/**'
-      - [skip actions]
+      - 'skip-actions*'
   
 jobs:
   build:
