@@ -5,7 +5,7 @@ on:
     paths-ignore:
       - 'dependabot/**'
   pull_request:
-     branches: "master" 
+     branches: "main" 
   
 jobs:
   build:
