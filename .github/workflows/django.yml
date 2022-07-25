@@ -1,11 +1,10 @@
 name: CI
 
 on:
-  push:
-    paths-ignore:
-      - 'dependabot/**'
   pull_request:
-     branches: "main" 
+    branches: "maain"
+  push:
+    branches: [main]
   
 jobs:
   build:
