@@ -2,8 +2,7 @@ name: CI
 
 on:
   pull_request:
-    branches-ignore:
-      - 'dependabot'
+    branches-ignore: "dependabot/**"
   push:
     branches: [main]
   
