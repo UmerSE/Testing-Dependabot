@@ -1,4 +1,4 @@
 Django==4.0.6
 pre-commit==1.0.0
 channels==2.0.0
-PyYAML==6.0
+PyYAML==5.0
