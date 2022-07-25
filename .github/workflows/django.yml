@@ -1,14 +1,14 @@
 name: CI
 
 on:
-  pull_request:
-    branches: "main"
+  push:
     branches-ignore:
       - 'dependabot/**'
-      - 'skip_ci*'
-  push:
-    branches: [main]
- 
+  pull_request:
+    branches-ignore:
+     - 'dependabot/**'
+      - 'skip ci*'
+  
 jobs:
   build:
     runs-on: ubuntu-latest
