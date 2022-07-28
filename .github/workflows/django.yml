@@ -27,7 +27,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run Tests
       if: ${{ github.actor !='dependabot[bot]'}}
-      skip_ci: True
+       allow_failure: true
       run: |
         python manage.py test
         coverage run manage.py test
