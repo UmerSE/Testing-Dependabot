@@ -26,12 +26,12 @@ jobs:
         pip install coverage
         pip install -r requirements.txt
     - name: Run Tests
+      if: ${{ github.actor !='dependabot[bot]'}}
       run: |
         python manage.py test
         coverage run manage.py test
         coverage report
         coverage xml
-      if: ${{ github.actor !='dependabot[bot]'}}
     - name: Coverage report
       uses: 5monkeys/cobertura-action@v12
       with:
